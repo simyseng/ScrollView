@@ -10,12 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var address1Field: UITextField!
+    @IBOutlet weak var telField: UITextField!
+    @IBOutlet weak var countryField: UITextField!
+    @IBOutlet weak var zipField: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var roundField: UITextField!
+    @IBAction func clearKeyboardTapped(_ sender: Any) {
+        firstNameField.resignFirstResponder()
+        lastNameField.resignFirstResponder()
+        address1Field.resignFirstResponder()
+        address2Field.resignFirstResponder()
+        telField.resignFirstResponder()
+        zipField.resignFirstResponder()
+        stateField.resignFirstResponder()
+        roundField.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         registerForKeyboardNotifications()
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var address2Field: UITextField!
     
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
